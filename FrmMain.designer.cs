@@ -196,6 +196,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "手动复制";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbfilePath3
             // 
@@ -248,6 +249,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "手动复制";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tbfilePath2
             // 
@@ -299,6 +301,7 @@
             this.btCopy.TabIndex = 14;
             this.btCopy.Text = "手动复制";
             this.btCopy.UseVisualStyleBackColor = false;
+            this.btCopy.Click += new System.EventHandler(this.btCopy_Click);
             // 
             // tbfilePath1
             // 

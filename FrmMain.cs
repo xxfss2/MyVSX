@@ -68,29 +68,7 @@ namespace MyVSX
                 if (curr.Name == efProjName)
                     _efProjObj = curr;
             }
-            //Core EF 项目添加文件夹
-            //coreProjObj.ProjectItems.AddFolder("DomainObjects");
-            //coreProjObj.ProjectItems.AddFolder("Infrastructure");
-            //coreProjObj.ProjectItems.AddFolder("Repository");
-            //coreProjObj.ProjectItems.AddFolder("Service");
 
-            //efProjObj.ProjectItems.AddFolder("Database");
-            //efProjObj.ProjectItems.AddFolder("DomainObjects");
-            //efProjObj.ProjectItems.AddFolder("Repository");
-            //efProjObj.ProjectItems.AddFolder("Service");
-
-            //var ite = soln.Projects.Item(1).ProjectItems;
-            //foreach (ProjectItem item in ite)
-            //{
-            //    listBox1.Items.Add(item.Name);
-            //    if (item.ProjectItems != null)
-            //    {
-            //        foreach (ProjectItem item2 in item.ProjectItems)
-            //        {
-            //            listBox1.Items.Add("  " + item2.Name);
-            //        }
-            //    }
-            //}
 
         }
 
@@ -304,6 +282,36 @@ namespace MyVSX
                 act.Save(SolutionAction.CurrSolution);
             }
             base.OnClosing(e);
+        }
+
+        private void btCopy_Click(object sender, EventArgs e)
+        {
+            CodeBuild cb = CodeBuild.GetInstance();
+            List<EntityInfo> entitys = GetSelectedEntitys();
+            //   EditEF1DatabaseFile editDB = new EditEF1DatabaseFile();
+            _databaseSer.CodeBuild(entitys);
+            FmPrint dlg = new FmPrint(_databaseSer.CodePrint());
+            dlg.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CodeBuild cb = CodeBuild.GetInstance();
+            List<EntityInfo> entitys = GetSelectedEntitys();
+            EditIocConfigFile editDB = new EditIocConfigFile();
+            editDB.CodeBuild(entitys);
+            FmPrint dlg = new FmPrint(editDB.CodePrint());
+            dlg.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CodeBuild cb = CodeBuild.GetInstance();
+            List<EntityInfo> entitys = GetSelectedEntitys();
+            //EditFactoryFile1 editDB = new EditFactoryFile1();
+            _factorySer.CodeBuild(entitys);
+            FmPrint dlg = new FmPrint(_factorySer.CodePrint());
+            dlg.ShowDialog();
         }
     }
 }

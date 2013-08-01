@@ -4,16 +4,6 @@
         <name>MyVSX</name>
     </assembly>
     <members>
-        <member name="F:CodeProduce.Solution.SolutionAction.CurrSolution">
-            <summary>
-            当前解决方案，可能是新创建的，也可能是加载的
-            </summary>
-        </member>
-        <member name="T:CodeProduce.CodeAnalysis.CodeAnysis">
-            <summary>
-            代码分析类抽象类
-            </summary>
-        </member>
         <member name="T:CodeProduce.BaseCode.EntityInfo">
             <summary>
             实体信息类
@@ -34,12 +24,203 @@
             实体作为局部变量的名称
             </summary>
         </member>
+        <member name="M:CodeProduce.Temp.CodeBuildService.CodeFileReBuild(System.String,System.String)">
+            <summary>
+            将生成的代码添加到指定的文件中
+            </summary>
+            <param name="path">代码文件路径</param>
+            <param name="code">生成的代码</param>
+        </member>
         <member name="M:CodeProduce.Temp.CodeHelp.AppendInCode(System.Text.StringBuilder,System.Int32,System.String,System.Object[])">
             <summary>
             插入缩进代码
             </summary>
             <param name="obj"></param>
             <param name="str"></param>
+        </member>
+        <member name="F:CodeProduce.Solution.SolutionAction.CurrSolution">
+            <summary>
+            当前解决方案，可能是新创建的，也可能是加载的
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.FieldType.SimpleField">
+            <summary>
+            简单类型
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.FieldType.ComplexField">
+            <summary>
+            复杂类型
+            </summary>
+        </member>
+        <member name="M:CodeProduce.CodeAnalysis.XMLHelper.GetChild(System.Xml.Linq.XElement,System.Xml.Linq.XName)">
+            <summary>
+            获取节点,遍历所有子节点，直到找出符合条件的对象
+            </summary>
+            <param name="parentNode"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CodeProduce.BaseCode.FieldInfo">
+            <summary>
+            字段信息类
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.Name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.PName">
+            <summary>
+            属性作为参数时的名称
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.DataType">
+            <summary>
+            属性数据类型
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.FieldType">
+            <summary>
+            属性类型（简单、复杂）
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.Nullable">
+            <summary>
+            是否可空
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.FieldInfo.MainKey">
+            <summary>
+            是否主键
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.ComplexFieldInfo.IsMulti">
+            <summary>
+            是否是个集合
+            </summary>
+        </member>
+        <member name="T:CodeProduce.CodeAnalysis.CodeAnysis">
+            <summary>
+            代码分析类抽象类
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.TempType.ENTITYNAME">
+            <summary>
+            实体名称
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.TempType.PRIMARYKEY">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.TempType.FIELDS">
+            <summary>
+            字段生成区域
+            </summary>
+        </member>
+        <member name="F:CodeProduce.BaseCode.TempType.RELATIONSHIP">
+            <summary>
+            导航属性区域
+            </summary>
+        </member>
+        <member name="F:MyVSX.FrmMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyVSX.FrmMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyVSX.FrmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MyVSX.FrmMain.MoveFileToProject">
+            <summary>
+            将生成的文件添加到项目对应的目录中
+            </summary>
+        </member>
+        <member name="T:CodeProduce.BaseCode.TempInfo">
+            <summary>
+            模板信息
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.TempInfo.BuildFilename">
+            <summary>
+            生成的文件名称
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.TempInfo.SavePath">
+            <summary>
+            生成的代码文件保存路径
+            </summary>
+        </member>
+        <member name="P:CodeProduce.BaseCode.TempInfo.ProjectPath">
+            <summary>
+            复制到目标项目的路径
+            </summary>
+        </member>
+        <member name="F:CodeProduce.FmPrint.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CodeProduce.FmPrint.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CodeProduce.FmPrint.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:CodeProduce.CodeAnalysis.EntityModel4Analysis">
+            <summary>
+            分析XML文件，获取模型信息
+            </summary>
+        </member>
+        <member name="F:CodeProduce.CodeAnalysis.EntityModel4Analysis._nameSpace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MyVSX.FmAddTemp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyVSX.FmAddTemp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyVSX.FmAddTemp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:CodeProduce.CodeAnalysis.EntityModel1Analysis">
+            <summary>
+            分析XML文件，获取模型信息
+            </summary>
+        </member>
+        <member name="F:CodeProduce.CodeAnalysis.EntityModel1Analysis._nameSpace">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:CodeProduce.Temp.CodeBuild">
             <summary>
@@ -84,6 +265,11 @@
             </summary>
             <param name="oldName"></param>
             <returns></returns>
+        </member>
+        <member name="M:CodeProduce.Solution.SolutionEntity.SaveHashCode">
+            <summary>
+            保存HASHCODE，用以比较退出时是否有修改
+            </summary>
         </member>
         <member name="T:MyVSX.Connect">
             <summary>用于实现外接程序的对象。</summary>
@@ -136,175 +322,6 @@
             <param term='varOut'>从命令处理程序传递到调用方的参数。</param>
             <param term='handled'>通知调用方此命令是否已被处理。</param>
             <seealso class='Exec' />
-        </member>
-        <member name="M:CodeProduce.Temp.CodeBuildService.CodeFileReBuild(System.String,System.String)">
-            <summary>
-            将生成的代码添加到指定的文件中
-            </summary>
-            <param name="path">代码文件路径</param>
-            <param name="code">生成的代码</param>
-        </member>
-        <member name="F:CodeProduce.BaseCode.FieldType.SimpleField">
-            <summary>
-            简单类型
-            </summary>
-        </member>
-        <member name="F:CodeProduce.BaseCode.FieldType.ComplexField">
-            <summary>
-            复杂类型
-            </summary>
-        </member>
-        <member name="T:CodeProduce.BaseCode.FieldInfo">
-            <summary>
-            字段信息类
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.Name">
-            <summary>
-            属性名称
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.PName">
-            <summary>
-            属性作为参数时的名称
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.DataType">
-            <summary>
-            属性数据类型
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.FieldType">
-            <summary>
-            属性类型（简单、复杂）
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.Nullable">
-            <summary>
-            是否可空
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.FieldInfo.MainKey">
-            <summary>
-            是否主键
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.ComplexFieldInfo.IsMulti">
-            <summary>
-            是否是个集合
-            </summary>
-        </member>
-        <member name="F:MyVSX.FrmMain.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MyVSX.FrmMain.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:MyVSX.FrmMain.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MyVSX.FrmMain.MoveFileToProject">
-            <summary>
-            将生成的文件添加到项目对应的目录中
-            </summary>
-        </member>
-        <member name="F:CodeProduce.BaseCode.TempType.ENTITYNAME">
-            <summary>
-            实体名称
-            </summary>
-        </member>
-        <member name="F:CodeProduce.BaseCode.TempType.PRIMARYKEY">
-            <summary>
-            主键
-            </summary>
-        </member>
-        <member name="F:CodeProduce.BaseCode.TempType.FIELDS">
-            <summary>
-            字段生成区域
-            </summary>
-        </member>
-        <member name="F:CodeProduce.BaseCode.TempType.RELATIONSHIP">
-            <summary>
-            导航属性区域
-            </summary>
-        </member>
-        <member name="T:CodeProduce.BaseCode.TempInfo">
-            <summary>
-            模板信息
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.TempInfo.BuildFilename">
-            <summary>
-            生成的文件名称
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.TempInfo.SavePath">
-            <summary>
-            生成的代码文件保存路径
-            </summary>
-        </member>
-        <member name="P:CodeProduce.BaseCode.TempInfo.ProjectPath">
-            <summary>
-            复制到目标项目的路径
-            </summary>
-        </member>
-        <member name="T:CodeProduce.CodeAnalysis.EntityModel4Analysis">
-            <summary>
-            分析XML文件，获取模型信息
-            </summary>
-        </member>
-        <member name="F:CodeProduce.CodeAnalysis.EntityModel4Analysis._nameSpace">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:CodeProduce.CodeAnalysis.EntityModel1Analysis">
-            <summary>
-            分析XML文件，获取模型信息
-            </summary>
-        </member>
-        <member name="F:CodeProduce.CodeAnalysis.EntityModel1Analysis._nameSpace">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:CodeProduce.CodeAnalysis.XMLHelper.GetChild(System.Xml.Linq.XElement,System.Xml.Linq.XName)">
-            <summary>
-            获取节点,遍历所有子节点，直到找出符合条件的对象
-            </summary>
-            <param name="parentNode"></param>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:CodeProduce.Solution.SolutionEntity.SaveHashCode">
-            <summary>
-            保存HASHCODE，用以比较退出时是否有修改
-            </summary>
-        </member>
-        <member name="F:MyVSX.FmAddTemp.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MyVSX.FmAddTemp.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:MyVSX.FmAddTemp.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
         </member>
     </members>
 </doc>

@@ -51,16 +51,18 @@ namespace CodeProduce.Solution
 
         public static string GetXMLFullName(string solutionName)
         {
-            return string .Format ("{0}\\{1}\\{1}.xml",DIRECTORY ,solutionName );
+            return string .Format ("{0}{1}\\{1}.xml",DIRECTORY ,solutionName );
         }
 
         public bool Save(SolutionEntity entity)
         {
-            if (Directory.Exists(DIRECTORY)==false )
+            string filepath=GetXMLFullName(entity .Name );
+            string path=filepath.Substring (0,filepath.LastIndexOf ('\\'));
+            if (Directory.Exists(path) == false)
             {
-                Directory.CreateDirectory(DIRECTORY);
+                Directory.CreateDirectory(path);
             }
-            using (FileStream fs = new FileStream(GetXMLFullName(entity .Name ), FileMode.Create))
+            using (FileStream fs = new FileStream(filepath, FileMode.Create))
             {
                 XmlSerializer format = new XmlSerializer(typeof(SolutionEntity));
                 format.Serialize(fs, entity);
