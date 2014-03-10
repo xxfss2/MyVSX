@@ -242,6 +242,7 @@ namespace MyVSX
                 foreach (var file in files)
                 {
                     projectItem.ProjectItems.AddFromFileCopy(file);
+                    System.IO.File.Delete(file);
                 }
             }
         }
